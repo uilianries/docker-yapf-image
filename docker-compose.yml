@@ -1,0 +1,12 @@
+version: '2'
+services:
+  yapf:
+    image: ${DOCKER_USERNAME}/yapf:${YAPF_VERSION}
+    build:
+      context: .
+      args:
+        YAPF_VERSION: ${YAPF_VERSION}
+    container_name: yapf
+    volumes:
+      - ${PROJECT_DIR}:/project
+    tty: true
